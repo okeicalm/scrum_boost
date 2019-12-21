@@ -11,6 +11,13 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
+# devise関連
+gem 'devise'
+gem 'devise_token_auth'
+
+# CORS設定
+gem 'rack-cors'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
