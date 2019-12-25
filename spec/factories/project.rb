@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :project do
-    name { Faker::Name.unique.name}
+    name { Faker::Name.unique.name }
     description { '' }
     user
   end
