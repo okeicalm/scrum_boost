@@ -4,7 +4,9 @@ require 'rails_helper'
 
 RSpec.describe Api::ProjectsController, type: :request do
   describe 'POST /api/projects' do
-    include_context :user_with_auth_headers
+    include_context 'with user and auth headers'
+
+    subject { post '/api/projects', params: params, headers: auth_headers }
 
     let(:params) do
       {
@@ -12,8 +14,6 @@ RSpec.describe Api::ProjectsController, type: :request do
         description: 'Project description',
       }.to_json
     end
-
-    subject { post '/api/projects', params: params, headers: auth_headers }
 
     it do
       subject

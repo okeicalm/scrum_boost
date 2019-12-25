@@ -11,9 +11,9 @@ class Api::ProjectsController < ApplicationController
 
     if @project.save
       # TODO: jbuilder使う
-      render :json => @project.to_json
+      render json: @project.to_json
     else
-      render :json => error_json(messages: @project.errors.full_messages)
+      render json: error_json(messages: @project.errors.full_messages)
     end
   end
 
