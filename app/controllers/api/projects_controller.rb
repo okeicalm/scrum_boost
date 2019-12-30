@@ -3,6 +3,11 @@
 class Api::ProjectsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @projects = Project.all
+    render json: @projects.to_json
+  end
+
   def create
     @project = current_user.projects.new(
       name: project_params[:name],
