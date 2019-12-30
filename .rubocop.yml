@@ -117,3 +117,8 @@ RSpec/HookArgument:
 # Configuration parameters: IgnoreSharedExamples.
 RSpec/NamedSubject:
   Enabled: false
+
+# Offense count: 1
+# Configuration parameters: AggregateFailuresByDefault.
+RSpec/MultipleExpectations:
+  Enabled: false
