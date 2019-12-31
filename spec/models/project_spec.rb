@@ -9,7 +9,10 @@ RSpec.describe Project, type: :model do
 
   describe 'Validation' do
     describe 'name' do
-      it { is_expected.to validate_presence_of(:name) }
+      it do
+        is_expected.to validate_presence_of(:name)
+        is_expected.to validate_length_of(:name).is_at_most(100)
+      end
     end
 
     describe 'description' do
