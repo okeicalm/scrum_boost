@@ -73,6 +73,9 @@ Style/TrailingCommaInArguments:
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
 
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
 # Offense count: 72
 # Cop supports --auto-correct.
 # Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
