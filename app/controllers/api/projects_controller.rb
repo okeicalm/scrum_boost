@@ -9,16 +9,15 @@ class Api::ProjectsController < ApplicationController
   end
 
   def create
-    @project = current_user.projects.new(
+    project_creator = Project::Creator.new(
       name: project_params[:name],
       description: project_params[:description],
+      user: current_user,
     )
-
-    if @project.save
-      # TODO: jbuilder使う
-      render json: @project.to_json
+    if project_creator.execute
+      render json: project_creator.project.to_json
     else
-      render json: error_json(messages: @project.errors.full_messages)
+      render json: error_json(messages: project_creator.errors.full_messages), status: :bad_request
     end
   end
 

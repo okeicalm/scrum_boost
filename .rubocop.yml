@@ -6,6 +6,7 @@ require:
 AllCops:
   Exclude:
     - 'db/schema.rb'
+    - 'db/migrate/**/*'
     - 'vendor/**/*'
     - 'node_modules/**/*'
     - 'bin/**/*'
@@ -23,20 +24,17 @@ Bundler/OrderedGems:
   Exclude:
   - 'Gemfile'
 
-# Offense count: 2
-Metrics/AbcSize:
-  Max: 26
-
-# Offense count: 1
-Metrics/CyclomaticComplexity:
-  Max: 9
-
 # Offense count: 3
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/MethodLength:
-  Max: 27
+  Max: 50
+
+Metrics/BlockLength:
+  Max: 100
 
 Style/ClassAndModuleChildren:
+  Exclude:
+    - 'config/application.rb'
   AutoCorrect: true
   EnforcedStyle: compact
 
@@ -74,6 +72,9 @@ Style/TrailingCommaInArguments:
 # SupportedStylesForMultiline: comma, consistent_comma, no_comma
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
+
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
 
 # Offense count: 72
 # Cop supports --auto-correct.

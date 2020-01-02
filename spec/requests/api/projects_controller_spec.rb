@@ -8,7 +8,7 @@ RSpec.describe Api::ProjectsController, type: :request do
 
     subject { get '/api/projects', headers: auth_headers }
 
-    before(:each) { create_list(:project, 3) }
+    before(:each) { create_list(:project, 3, :with_product_backlog) }
 
     it do
       subject
