@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
 class Api::ProjectsController < ApplicationController
-  before_action :authenticate_user!
-
   def index
-    @projects = Project.all
+    @projects = current_user.projects
     render json: @projects.to_json
   end
 
