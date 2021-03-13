@@ -24,8 +24,6 @@ Bundler/OrderedGems:
   Exclude:
   - 'Gemfile'
 
-# Offense count: 3
-# Configuration parameters: CountComments, ExcludedMethods.
 Metrics/MethodLength:
   Max: 50
 
@@ -38,88 +36,52 @@ Style/ClassAndModuleChildren:
   AutoCorrect: true
   EnforcedStyle: compact
 
-# Offense count: 11
 Style/Documentation:
   Enabled: false
 
-# Offense count: 41
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: always, never
 Style/FrozenStringLiteralComment:
   Exclude:
   - 'Gemfile'
   - 'Rakefile'
   - 'config.ru'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: .
-# SupportedStyles: use_perl_names, use_english_names
 Style/SpecialGlobalVars:
   EnforcedStyle: use_perl_names
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
 Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: comma
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
 
 Style/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
-# Offense count: 72
-# Cop supports --auto-correct.
-# Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
-# URISchemes: http, https
 Layout/LineLength:
   Max: 190
 
 # ------------ For Rails ------------ #
 
-# Offense count: 1
-# Configuration parameters: Database, Include.
-# SupportedDatabases: mysql, postgresql
-# Include: db/migrate/*.rb
 Rails/BulkChangeTable:
   Enabled: false
 
-# Offense count: 2
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: slashes, arguments
 Rails/FilePath:
   EnforcedStyle: slashes
 
-# Offense count: 1
-# Configuration parameters: Include.
-# Include: app/models/**/*.rb
 Rails/HasManyOrHasOneDependent:
   Exclude:
   - 'app/models/user.rb'
 
 # ------------ For Rspec ------------ #
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: .
-# SupportedStyles: implicit, each, example
 RSpec/HookArgument:
   EnforcedStyle: each
 
-# Offense count: 1
-# Configuration parameters: IgnoreSharedExamples.
 RSpec/NamedSubject:
   Enabled: false
 
-# Offense count: 1
-# Configuration parameters: AggregateFailuresByDefault.
 RSpec/MultipleExpectations:
   Enabled: false
+
+RSpec/ImplicitSubject:
+  EnforcedStyle: single_line_only
