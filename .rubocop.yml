@@ -85,3 +85,6 @@ RSpec/MultipleExpectations:
 
 RSpec/ImplicitSubject:
   EnforcedStyle: single_line_only
+
+RSpec/MessageChain:
+  Enabled: false
