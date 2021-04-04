@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_31_000000) do
+ActiveRecord::Schema.define(version: 2021_04_04_003424) do
 
   create_table "product_backlogs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "project_id", null: false
@@ -26,6 +26,19 @@ ActiveRecord::Schema.define(version: 2019_12_31_000000) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "sprint_backlogs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "product_backlog_id", null: false
+    t.string "name", null: false
+    t.text "description"
+    t.integer "initial_point_sum", null: false
+    t.integer "point_sum", null: false
+    t.datetime "started_at", null: false
+    t.datetime "ended_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_backlog_id"], name: "index_sprint_backlogs_on_product_backlog_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -57,4 +70,5 @@ ActiveRecord::Schema.define(version: 2019_12_31_000000) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "sprint_backlogs", "product_backlogs"
 end
