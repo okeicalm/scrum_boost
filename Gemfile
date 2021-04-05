@@ -7,7 +7,7 @@ gem 'rails', '~> 6.1.0'
 gem 'mysql2', '>= 0.4.4'
 gem 'puma', '~> 3.12'
 gem 'sass-rails', '~> 5'
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 5.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
