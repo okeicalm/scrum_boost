@@ -125,7 +125,9 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
-    mimemagic (0.3.5)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.0.2)
     minitest (5.14.4)
     msgpack (1.4.2)
@@ -133,9 +135,11 @@ GEM
     nio4r (2.5.7)
     nokogiri (1.11.2-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.11.2-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.20.1)
-    parser (3.0.0.0)
+    parser (3.0.1.0)
       ast (~> 2.4.1)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -193,7 +197,7 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
-    rexml (3.2.4)
+    rexml (3.2.5)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.1)
@@ -222,8 +226,8 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.4.1)
       parser (>= 2.7.1.5)
-    rubocop-performance (1.10.1)
-      rubocop (>= 0.90.0, < 2.0)
+    rubocop-performance (1.11.0)
+      rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
     rubocop-rails (2.9.1)
       activesupport (>= 4.2.0)
@@ -300,6 +304,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
