@@ -1,0 +1,21 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: webpacker
+    versions:
+    - 5.2.1
+  - dependency-name: rubocop
+    versions:
+    - 1.12.0
+    - 1.12.1
+  - dependency-name: bootsnap
+    versions:
+    - 1.7.3
+  - dependency-name: rubocop-performance
+    versions:
+    - 1.10.2
