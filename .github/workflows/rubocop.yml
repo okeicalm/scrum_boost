@@ -12,6 +12,9 @@ jobs:
           ruby-version: 3.0.0
       - name: rubocop
         uses: reviewdog/action-rubocop@v1
+        env:
+          DATABASE_CLEANER_ALLOW_PRODUCTION: true
+          DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL: true
         with:
           rubocop_version: gemfile
           rubocop_extensions: rubocop-rails:gemfile rubocop-rspec:gemfile
