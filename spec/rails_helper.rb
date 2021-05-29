@@ -31,6 +31,7 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :request
 
   config.before(:suite) do
+    DatabaseCleaner.allow_remote_database_url = ENV['CI']
     DatabaseCleaner.strategy = :truncation
   end
 
