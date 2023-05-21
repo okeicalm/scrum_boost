@@ -1,4 +1,4 @@
-package com.okeicalm.plugins
+package com.okeicalm.scrumBoost.plugins
 
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.plugins.contentnegotiation.*

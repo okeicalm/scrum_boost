@@ -1,4 +1,4 @@
-package com.okeicalm.plugins
+package com.okeicalm.scrumBoost.plugins
 
 import io.ktor.server.routing.*
 import io.ktor.server.response.*

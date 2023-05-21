@@ -1,4 +1,4 @@
-package com.okeicalm.plugins
+package com.okeicalm.scrumBoost.plugins
 
 import org.jetbrains.exposed.sql.*
 import io.ktor.http.*
