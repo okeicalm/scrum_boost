@@ -1,7 +1,8 @@
 name: detekt
-on: [ pull_request ]
-paths:
-  - 'api/**'
+on:
+  pull_request:
+    paths:
+      - 'api/**'
 
 jobs:
   detekt:
