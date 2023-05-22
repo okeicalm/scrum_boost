@@ -20,3 +20,4 @@ jobs:
         uses: alaegin/Detekt-Action@v1.22.0
         with:
           github_token: ${{ secrets.github_token }}
+          detekt_build_upon_default_config: true
