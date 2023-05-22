@@ -4,7 +4,7 @@ import com.okeicalm.scrumBoost.plugins.configureDatabases
 import com.okeicalm.scrumBoost.plugins.configureRouting
 import com.okeicalm.scrumBoost.plugins.configureSecurity
 import com.okeicalm.scrumBoost.plugins.graphQLModule
-import io.ktor.server.application.*
+import io.ktor.server.application.Application
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
