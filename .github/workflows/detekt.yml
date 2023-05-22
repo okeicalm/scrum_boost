@@ -31,10 +31,12 @@ jobs:
 
       - name: detekt
         working-directory: ./api
+        continue-on-error: true
+        id: detekt_execution
         run: ./gradlew detekt
 
       - name: reviewdog report
-        if: failure()
+        if: ${{ steps.detekt_execution.outcome == 'failure' }}
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: cat ./api/build/reports/detekt/detekt.xml |
