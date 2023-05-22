@@ -41,3 +41,4 @@ jobs:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: cat ./api/build/reports/detekt/detekt.xml |
           reviewdog -f=checkstyle -name="detekt" -reporter="github-pr-review"
+          exit 1
