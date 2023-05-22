@@ -1,7 +1,7 @@
 package com.okeicalm.scrumBoost.plugins
 
 import io.ktor.server.application.Application
-import org.jetbrains.exposed.sql.Database
+import org.jetbrains.exposed.sql.*
 
 fun Application.configureDatabases() {
     @Suppress("unused")
