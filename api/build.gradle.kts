@@ -56,6 +56,13 @@ val graphqlGenerateSDL by tasks.getting(GraphQLGenerateSDLTask::class) {
 
 val detektTask = tasks.withType<Detekt>().configureEach {
     jvmTarget = "1.8"
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+        txt.required.set(true)
+        sarif.required.set(true)
+        md.required.set(true)
+    }
 }
 
 tasks.check {
