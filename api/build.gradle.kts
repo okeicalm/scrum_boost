@@ -1,4 +1,5 @@
 import com.expediagroup.graphql.plugin.gradle.tasks.GraphQLGenerateSDLTask
+import io.gitlab.arturbosch.detekt.Detekt
 
 val ktor_version: String by project
 val kotlin_version: String by project
@@ -12,6 +13,7 @@ plugins {
     id("io.ktor.plugin") version "2.2.4"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.20"
     id("com.expediagroup.graphql") version "7.0.0-alpha.5"
+    id("io.gitlab.arturbosch.detekt") version "1.22.0"
 }
 
 group = "com.okeicalm"
@@ -50,4 +52,19 @@ dependencies {
 val graphqlGenerateSDL by tasks.getting(GraphQLGenerateSDLTask::class) {
     packages.set(listOf("com.okeicalm.scrumBoost"))
     schemaFile.set(file("${project.projectDir}/../graphql/schema.graphql"))
+}
+
+val detektTask = tasks.withType<Detekt>().configureEach {
+    jvmTarget = "1.8"
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+        txt.required.set(true)
+        sarif.required.set(true)
+        md.required.set(true)
+    }
+}
+
+tasks.check {
+    dependsOn(detektTask)
 }
