@@ -1,20 +1,23 @@
+import com.expediagroup.graphql.plugin.gradle.tasks.GraphQLGenerateSDLTask
+
 val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
-val exposed_version : String by project
-val h2_version : String by project
-val graphql_kotlin_version : String by project
+val exposed_version: String by project
+val h2_version: String by project
+val graphql_kotlin_version: String by project
 
 plugins {
     kotlin("jvm") version "1.8.20"
     id("io.ktor.plugin") version "2.2.4"
-                id("org.jetbrains.kotlin.plugin.serialization") version "1.8.20"
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.8.20"
+    id("com.expediagroup.graphql") version "7.0.0-alpha.5"
 }
 
 group = "com.okeicalm"
 version = "0.0.1"
 application {
-    mainClass.set("com.okeicalm.ApplicationKt")
+    mainClass.set("io.ktor.server.netty.EngineMain")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
@@ -22,6 +25,11 @@ application {
 
 repositories {
     mavenCentral()
+    mavenLocal {
+        content {
+            includeGroup("com.expediagroup")
+        }
+    }
 }
 
 dependencies {
@@ -37,4 +45,9 @@ dependencies {
     implementation("com.expediagroup:graphql-kotlin-ktor-server:$graphql_kotlin_version")
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+}
+
+val graphqlGenerateSDL by tasks.getting(GraphQLGenerateSDLTask::class) {
+    packages.set(listOf("com.okeicalm.scrumBoost"))
+    schemaFile.set(file("${project.projectDir}/../graphql/schema.graphql"))
 }
